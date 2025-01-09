@@ -49,7 +49,6 @@ const Index = () => {
   const { toast } = useToast();
 
   const handleServiceClick = (serviceId: string) => {
-    // For now, just show a toast. Later, you can implement the actual navigation
     toast({
       title: "Coming Soon",
       description: "This service will be available soon!",
@@ -60,25 +59,27 @@ const Index = () => {
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gray-50">
         <AppSidebar />
-        <main className="flex-1 p-8">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Media Services Dashboard</h1>
-              <p className="text-gray-600 mt-2">Select a service to get started</p>
+        <main className="flex-1">
+          <div className="p-8">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Media Services Dashboard</h1>
+                <p className="text-gray-600 mt-2">Select a service to get started</p>
+              </div>
+              <SidebarTrigger className="ml-4 hover:bg-gray-100" />
             </div>
-            <SidebarTrigger />
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.id}
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-                onClick={() => handleServiceClick(service.id)}
-              />
-            ))}
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                  onClick={() => handleServiceClick(service.id)}
+                />
+              ))}
+            </div>
           </div>
         </main>
       </div>
