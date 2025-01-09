@@ -50,10 +50,14 @@ const Index = () => {
   const { toast } = useToast();
 
   const handleServiceClick = (serviceId: string) => {
-    toast({
-      title: "Coming Soon",
-      description: "This service will be available soon!",
-    });
+    if (serviceId === "video-customizer") {
+      navigate("/video-customizer");
+    } else {
+      toast({
+        title: "Coming Soon",
+        description: "This service will be available soon!",
+      });
+    }
   };
 
   return (
