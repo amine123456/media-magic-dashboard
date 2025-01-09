@@ -1,4 +1,4 @@
-import { Video, Image, Music, Film, AudioLines, Badge } from "lucide-react";
+import { Video, Image, Music, Film, AudioLines, Badge, LayoutDashboard } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -8,9 +8,15 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarHeader,
 } from "@/components/ui/sidebar";
 
 const menuItems = [
+  {
+    title: "Dashboard",
+    icon: LayoutDashboard,
+    url: "/",
+  },
   {
     title: "Video Customizer",
     icon: Video,
@@ -46,17 +52,28 @@ const menuItems = [
 export function AppSidebar() {
   return (
     <Sidebar>
+      <SidebarHeader className="border-b border-sidebar-border p-4">
+        <div className="flex items-center space-x-2">
+          <Video className="h-6 w-6 text-primary" />
+          <span className="text-lg font-semibold text-primary">MediaHub</span>
+        </div>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Media Services</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-xs font-medium text-sidebar-foreground/70 px-2 py-4">
+            Media Services
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem key={item.title} className="px-2 py-1">
                   <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-3">
-                      <item.icon className="h-5 w-5" />
-                      <span>{item.title}</span>
+                    <a
+                      href={item.url}
+                      className="flex items-center gap-3 p-2 rounded-md hover:bg-sidebar-accent transition-colors duration-200"
+                    >
+                      <item.icon className="h-5 w-5 text-primary" />
+                      <span className="font-medium">{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
