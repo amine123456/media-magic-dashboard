@@ -1,4 +1,4 @@
-import { Video, Image, Music, Film, AudioLines, Watermark } from "lucide-react";
+import { Video, Image, Music, Film, AudioLines, Badge } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -38,7 +38,7 @@ const menuItems = [
   },
   {
     title: "Watermark & Branding",
-    icon: Watermark,
+    icon: Badge,
     url: "#watermark",
   },
 ];

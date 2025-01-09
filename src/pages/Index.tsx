@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Video, Image, Music, Film, AudioLines, Watermark } from "lucide-react";
+import { Video, Image, Music, Film, AudioLines, Badge } from "lucide-react";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -40,7 +40,7 @@ const services = [
     id: "watermark",
     title: "Watermark & Branding",
     description: "Add watermarks and branding elements to your videos.",
-    icon: Watermark,
+    icon: Badge,
   },
 ];
 
